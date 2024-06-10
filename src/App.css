@@ -1,0 +1,495 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: system-ui;
+}
+
+.container {
+	max-width: 420px;
+	text-align: center;
+}
+
+/* Login Panel Start */
+
+.containerLogin {
+	max-width: 420px;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+
+form {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 10px;
+	height: 100%;
+	text-align: center;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+
+.loginContainer {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 90%;
+    height: 80vh;
+    left: 5%;
+    top: 5vh;
+
+    h1 {
+        font-weight: bold;
+        margin: 0;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 100;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        margin: 20px 0 30px;
+    }
+
+    span {
+        font-size: 12px;
+    }
+
+    a {
+        color: #333;
+        font-size: 14px;
+        text-decoration: none;
+        margin: 15px 0;
+    }
+}
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.loginContainer.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+.sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.loginContainer.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.loginContainer.right-panel-active .overlay-container{
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.loginContainer.right-panel-active .overlay {
+  	transform: translateX(50%);
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 10px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+	transform: translateX(-20%);
+}
+
+.loginContainer.right-panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.loginContainer.right-panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+.social-container {
+	margin: 20px 0;
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+}
+
+/* Login Panel End */
+
+/* Header Start */
+
+header {
+	display: flex;
+	padding: 10px 20px;
+	justify-content: space-between;
+	align-items: center;
+
+
+	& img {
+		width: 100px;
+	}
+}
+
+.status {
+	text-align: center;
+}
+
+/* Header End */
+
+/* Student Start */
+
+.student-container {
+	padding: 20px;
+
+	& h1 {
+		margin-bottom: 20px;
+	}
+}
+
+select {
+	width: 100%;
+	padding: 10px;
+	margin: 8px 0;
+	border: none;
+	background-color: #EEE;
+}
+
+/* Student End */
+
+/* Admin Start */
+
+.admin-container {
+	padding: 20px;
+
+	& h1 {
+		margin-bottom: 20px;
+	}
+
+	& input {
+		width: 300px;
+		margin-bottom: 10px;
+	}
+
+	& button {
+		margin-bottom: 10px;
+	}
+}
+
+.student-list {
+
+	& h2 {
+		margin-bottom: 20px;
+	}
+
+	& ul {
+		list-style-type: none;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+	}
+
+	& li {
+		padding: 10px;
+		background-color: aquamarine;
+		margin-bottom: 10px;
+	}
+}
+/* Admin End */
+
+/* General styles */
+body {
+	margin: 0;
+	font-family: 'Arial', sans-serif;
+	background-color: #f5f5f5;
+}
+
+.app-container {
+	padding: 20px;
+}
+
+/* Header styles */
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	background-color: #4CAF50;
+	color: white;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header .logo {
+	height: 100%;
+}
+
+.header .status {
+	display: flex;
+	align-items: center;
+}
+
+.header .status p {
+	margin: 0 10px 0 0;
+	font-size: 1rem;
+}
+
+.header .logout-link {
+	color: white;
+	text-decoration: none;
+	background-color: #f44336;
+	padding: 5px 10px;
+	border-radius: 4px;
+}
+
+.header .logout-link:hover {
+	background-color: #d32f2f;
+}
+
+/* Mobile styles for header */
+@media (max-width: 768px) {
+
+	.header .status {
+		width: 100%;
+		justify-content: space-between;
+		margin-top: 10px;
+	}
+
+	.header .status p {
+		font-size: 0.9rem;
+	}
+
+	.header .logout-link {
+		padding: 5px 8px;
+		font-size: 0.9rem;
+	}
+}
+
+/* Further mobile optimization for header */
+@media (max-width: 480px) {
+	.header {
+		padding: 10px;
+	}
+
+
+	.header .status {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.header .status p {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 5px;
+		font-size: 0.8rem;
+	}
+
+	.header .status span {
+		margin-bottom: 5px;
+		font-size: 1rem;
+	}
+
+	.header .logout-link {
+		padding: 4px 7px;
+		font-size: 0.8rem;
+	}
+}
+
+/* Countdown container styles */
+.countdown-container {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.countdown-container h1 {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+.controls {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.controls input {
+	padding: 10px;
+	font-size: 1rem;
+	margin-bottom: 10px;
+	width: 80%;
+	max-width: 300px;
+}
+
+.controls button {
+	padding: 10px 20px;
+	font-size: 1rem;
+	margin-bottom: 10px;
+	width: 80%;
+	max-width: 300px;
+	cursor: pointer;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+}
+
+.controls button:disabled {
+	background-color: #9E9E9E;
+}
+
+.controls button:hover:not(:disabled) {
+	background-color: #45A049;
+}
+
+/* Students container styles */
+.students-container {
+	margin-top: 20px;
+}
+
+.students-container div {
+	padding: 10px;
+	background-color: white;
+	margin-bottom: 10px;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.students-container div:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+/* Mobile styles for countdown container */
+@media (max-width: 768px) {
+	.countdown-container h1 {
+		font-size: 1.5rem;
+	}
+
+	.controls input, .controls button {
+		font-size: 0.9rem;
+		padding: 8px 16px;
+	}
+}
+
+/* Further mobile optimization for countdown container */
+@media (max-width: 480px) {
+	.countdown-container h1 {
+		font-size: 1.2rem;
+	}
+
+	.controls input, .controls button {
+		font-size: 0.8rem;
+		padding: 6px 12px;
+	}
+}
