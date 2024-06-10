@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Header from "./assets/components/Header.jsx";
+import Header from "./components/Header.jsx";
 import { Link } from "react-router-dom";
 import { supabase } from "./supabase.js";
 

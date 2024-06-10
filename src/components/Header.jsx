@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { supabase } from "../../supabase";
+import { supabase } from "../supabase.js";
 
 export default function Header({ currentUser }) {
 
@@ -10,7 +10,7 @@ export default function Header({ currentUser }) {
 
     return (
         <header className="header">
-            <Link to="/home"><img src="public/img/ama-logo.png" alt="AMA Logo" className="logo" /></Link>
+            <Link to="/home"><img src="/img/ama-logo.png" alt="AMA Logo" className="logo" /></Link>
             {currentUser && (
                 <div className="status">
                     <p>Hoşgeldin <span>{currentUser?.name}</span></p>
